@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUSTOMER TABLES DETAILS</title>
+    <link rel="stylesheet" href="doop-tablefb1.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    
+</head>
+<body>
+    <div class="head">    
+       <div class="inhead"> 
+            <h2 >Welcome to Facebook</h2>
+            <h4  id="username">hi</h4>
+            <button onclick="remove_cookie()" class="mbt"><a href="http://localhost:8086/home" target="_blank">Log Out</a></button>
+      </div>
+    </div>
+               
+
+    <div class="count">
+               <h2 class="tt"">Customer Table</h2>
+               <h3 class="tc">Total:<span id="input" ></h4>
+    </div>
+                      <!-- table -->
+    <div class="hi">
+          <div id="spin"><i style="padding: 10px;" class="fas fa-cog fa-spin"></i>Loading..... </div>
+        <div style="height: 100px;"><table id="tableid"></table></div>
+    </div>
+
+     <!----------------------- buttons code ------------------->
+    <div class="buttons">
+        <p>Showing 1-10 of total 100</p>
+        <button id="pre" ><i class="fas fa-backward"></i> Pre</button>
+        <button id="next"><i class="fas fa-forward"></i> Next</button>
+    </div>
+       
+                  <!------------- model   ------ -->
+
+   <div class="main">
+     <div class="box">
+            <div class="hh">
+                <div class="inhh">
+                 <h4>Update user</h4>
+                 <span style="font-size: 30px" class="close">&times;</span> 
+                </div>
+            </div>
+
+            <div class="bodi">
+                <div class="inbodi">
+                     <span>Name</span>
+                     <input id="lname">
+                     <span>Address</span>
+                     <input id="laddress">
+                </div>
+            </div>
+
+            <div class="foot">
+                <div class="infoot">
+                        <button id="cl">Close</button>
+                      <button id="up">
+                          <div class="animal"><i id="cat" class="fas fa-spinner fa-pulse"></i></div>
+                          <div class="fish">Update</div>
+                        </button>
+                </div>
+            </div>
+     </div>
+</div>
+  
+  <script  type="text/javascript">
+     
+   var a = Cookies.get('user');
+   var n = JSON.parse(Cookies.get('user')).name;
+   console.log(a);
+   console.log(n);
+
+   document.getElementById('username').innerText = n;
+
+   //--------------------------get customer table from server and data displayed in table
+      
+    var skip = 0; var limit = 10;
+    limitRows(skip,limit);
+
+function limitRows(skip,limit){
+
+    //    console.log(skip);
+    //    console.log(limit);
+    
+    fetch(`http://localhost:8086/custmr?skip=${skip}&limit=${limit}`,{
+            method: 'GET', // or 'PUT'
+            headers: {
+              'Content-Type': 'application/json',
+            },
+        })
+        .then(response => response.json())
+        .then(list => {
+            // spinneer icon  hide on success
+            var i = document.getElementById('spin');
+            i.style.visibility = "hidden";
+
+
+             // )Create a variable to store HTML 
+             let li = `<tr> <th>Id</th> <th>Name</th> <th>Address</th> <th>Email</th> <th>Password</th> <th>Delete</th> <th>Update</th> </tr>`; 
+ 
+              // Loop through each data and add a table row 
+            list.forEach(user => { 
+             const jsonstring = (JSON.stringify(user)).trim();
+
+             li += `<tr> 
+            <td>`+user.Id+`</td> 
+            <td data-value="nname">`+user.name+`</td> 
+            <td data-value="aaddress">`+user.address+`</td> 
+            <td>`+user.Email+`</td> 
+            <td>`+user.password+`</td>
+            <td><button onclick="fndelete(`+user.id+`,event)"><i style="color:#ff0000 ;" class="fas fa-user-slash"></i></button></td>
+            <td><button data-user='${jsonstring}' class="update-btn" onclick="update(event)"><i style="color:#ffff66;font-size: 17px;" class="fas fa-pen-square"></i></button</td> 
+            </tr>`; 
+            }); 
+
+           // Display result   
+           document.getElementById("tableid").innerHTML = li; 
+
+          // display table when data is fetched ( spinner icon "invissible")
+           var ctable = document.getElementById('tableid');
+           ctable.style.visibility = "visible";
+    
+        });
+        document.getElementById("pre").addEventListener("click", function(){    
+                   skip = skip - limit;
+                   limitRows(skip,limit);
+        }); 
+        document.getElementById("next").addEventListener("click", function(){    
+                   skip = skip + limit;
+                   limitRows(skip,limit);
+        });
+  
+}  
+
+// <td>`+user.id+`</td> 
+    // ocalhost:8086/custmr?offset=0&limit=20
+//-------------------------------------------------  Delete Row  --------------------------------------------------------------------------------------- 
+
+     function fndelete(id,event){
+            console.log(id);
+            console.log("it z  event ", event);
+
+            fetch('http://localhost:8086/remove-customer/'+id,{
+                method:"delete"
+            })
+            .then(res =>{
+                console.log(res)
+                res.json()
+            })
+            .then(data => {
+                console.log("its data = ", data);
+                     //event.srcElement.parentElement.parentElement.parentElement.remove();
+                                // var current = window.event.srcElement;
+                                //    //here we will delete the line
+                                // while ( (current = current.parentElement)  && current.tagName !="TR");
+                                //           // current.parentElement.removeChild(current);
+                                          
+                                
+                                var current = event.srcElement;
+                                   //here we will delete the line
+                                while((current.tagName!="TR")){
+                                      current=current.parentElement; 
+
+                                }
+                                current.remove();
+                                
+            })
+    }
+// --------------------------------------------------------  TOTAL COUNT   ------------------------------------------------------------------------------------    
+  
+fetch('http://localhost:8086/total-count', {
+            method: 'GET', // or 'PUT'   
+        })
+        .then(response => {
+           return response.json();
+        })
+        .then(data => { 
+            //    console.log("total row count = ", data);
+              // var a = JSON.parse(data);
+               
+               document.getElementById('input').innerText = data[0]['COUNT(*)'];            
+               
+        }).catch(err =>{
+            console.log(err);
+        })
+//-----------------------------------------------     REMOVIE COOKIE ON LOGOUT        
+  
+function remove_cookie(){
+        Cookies.remove('user', { path: '' }) // removed!
+    }
+
+                    //---------------------   Update     -----------------------------------------
+
+var activeRow = null;
+var global_uid = null;
+
+function update(event){
+   
+    activeRow = event.srcElement;
+
+    var main = document.getElementsByClassName('main');
+    main[0].style.display = "flex";
+
+    let btnElement = event.srcElement;
+    while(btnElement.tagName !== "BUTTON"){
+        btnElement = btnElement.parentElement;
+    }
+
+    const jsonstring = btnElement.getAttribute('data-user');
+    console.log(JSON.parse(jsonstring));
+     
+    // user row date  {id,name,address,etc etc}
+    const userpars = JSON.parse(jsonstring);
+    // console.log(userpars.name);
+
+    var lname = userpars.name;
+    var laddress = userpars.address;
+    var uid;
+    uid = userpars.id;
+    global_uid = uid;
+    console.log("id in upadate1 =",  global_uid);
+      
+    document.getElementById('lname').value = lname;
+    document.getElementById('laddress').value = laddress;
+
+    document.getElementById('cat').style.display = "none";
+}
+      
+//-------------------------- model UPdate.........................
+    
+    document.getElementById ("up").addEventListener("click", inupdate, false);
+
+    function inupdate(){
+        
+        document.getElementById('cat').style.display = "flex";
+          var newName =  document.getElementById('lname').value;
+          var newAdd =  document.getElementById('laddress').value;
+          // sending newName , new ADDRESS and id to server to upadate in customers table
+          console.log("newname =", newName);
+          console.log("newadd =", newAdd);
+          console.log("inupdate2", global_uid);
+
+          var allnew = {
+            newName : newName,
+            newAdd : newAdd
+          };
+
+        fetch('/update-customer/'+ global_uid, {
+              method: 'POST', // or 'PUT'
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(allnew),
+        })
+        .then(response => {
+            response.json();
+            console.log(response);
+        })
+        .then(data => {
+                global_uid = null;
+                console.log('Success:', +data);
+
+                // console.log("newname =", newName);
+                // console.log("newadd =", newAdd);
+                       
+                // var trElement = activeRow;
+                while((activeRow.tagName!="TR")){
+                    activeRow=activeRow.parentElement; 
+                }
+                // we found TR element ,now looping its children(td's)  // activeRow.children.length=7
+                for(i=0; i < activeRow.children.length; i++){
+                      var td = activeRow.children[i];
+                      const tdType = td.getAttribute('data-value');
+                       
+                      if(tdType === 'nname'){
+                          td.innerText = document.getElementById('lname').value;
+                      }
+                      if(tdType === 'aaddress'){
+                          td.innerText = document.getElementById('laddress').value;
+                      }
+                }
+                document.getElementsByClassName('main')[0].style.display = "none";
+
+        })
+        .catch((error) => {
+              console.error('Error:', error);
+        });
+}
+// Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+        
+// When the user clicks on <span> (x), close the modal
+    var main = document.getElementsByClassName('main');
+    span.onclick = function(){
+        main[0].style.display = "none";
+    }    
+            
+    window.onclick = function(event){
+             if(!event.target.closest('.box,.update-btn')){
+               document.getElementsByClassName('main')[0].style.display = "none";
+             }
+    }
+    
+// close the model when CLOSE button is clicked
+    document.getElementById ("cl").addEventListener("click", inClose, false);
+
+    function inClose(){
+        document.getElementsByClassName('main')[0].style.display = "none";
+    }
+       
+</script>
+</body>
+</html>

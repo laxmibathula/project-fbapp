@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> model Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .main{
+            margin: 0;
+            height: 100vh;
+            width: 100%;
+         /* background-color: thistle; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .container{
+            display: none;
+            position: fixed;
+            border: 1px solid rgb(22, 21, 21);
+            width: 700px;
+            height: 280px;
+            flex-direction: column;
+            align-items: stretch;
+           
+        }
+        .header{
+            /* border: 1px solid red; */
+            background-color: rgb(133, 51, 99);  
+            height:40px;
+        }
+        .inhead{
+            height:40px;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 20px; 
+            color: white; 
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }  
+        .bodi{
+            /* border: 1px solid green; */
+            height:190px;
+        }
+        .inbodi{
+            height:190px;
+            /* border: 1px solid red; */
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;  
+        }
+        .inbodi input{
+            border: 1px solid rgb(133, 51, 99);
+            width: 250px;
+            height: 30px;
+            margin: 0 0 10px 0;      
+           
+        }
+        .foot{
+            border-top: 1px solid rgb(133, 51, 99);
+            height:40px;
+        }
+        .infoot{
+            height:40px;
+            margin: 0 20px;
+            /* border: 1px solid rgb(0, 255, 98); */
+            display: flex;
+            justify-content:flex-end;
+            align-items: center;    
+        }
+        .infoot button{
+            height: 30px;
+            margin: 15PX 0 0 15px;
+            background-color: rgb(133, 51, 99);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="update()">click Model</button>
+    <div class="main">
+     <div class="container">
+            <div class="header">
+                <div class="inhead">
+                 <h4>Update user</h4>
+                 <span style="font-size: 30px" class="close">&times;</span> 
+                </div>
+            </div>
+            <div class="bodi">
+                <div class="inbodi">
+               <span>Name</span> <input  id="name">
+               <span>address</span> <input id="addr">
+                </div>
+            </div>
+            <div class="foot">
+                <div class="infoot">
+                <button>Close</button>
+                <button>Update</button>
+                </div>
+            </div>
+
+     </div>
+    </div>
+<script>
+     function update(){
+         var container = document.getElementsByClassName('container');
+         container[0].style.display = "flex";
+        
+        // var a= "raji";
+        // var b = "51111";
+
+        // document.getElementById('name').innerText = a;
+        // document.getElementById('addr').innerText = b;
+          
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks on <span> (x), close the modal
+           span.onclick = function() {
+           container[0].style.display = "none";
+           }
+
+        // When the user clicks anywhere outside of the modal, close it
+        
+    }
+   
+    window.onclick = function(event){
+        var container = document.getElementsByClassName('container');
+                    if(event.srcElement.tagName !="BUTTON" && event.srcElement.className!="container"){
+                           container[0].style.display = "none";
+                    }
+        }
+
+     
+
+</script>
+</body>
+</html>

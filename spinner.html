@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+   
+</head>
+<body>
+   <h2  id="hi" style="color: darkorchid;">hi cookie</h2>
+
+  
+   <script>
+   Cookies.set('raji', JSON.stringify({email:'jak@habb',pass:'hhkhkh'}), { expires: 7 , path: ''});   
+   var ck = Cookies.get('raji') // => 'value' 
+   console.log(ck);  
+
+   var d = JSON.parse(Cookies.get('raji')).pass
+   console.log(d);
+
+    // ................... nani ...............console
+
+    // Cookies.set('raji',JSON.stringify({email:'rabdgfggh'}));
+    //   "raji={%22email%22:%22rabdgfggh%22}; path=/"  
+      
+      
+    //   Cookies.get('raji').email
+    //    undefined
+
+    //    JSON.parse(Cookies.get('raji')).email
+    //    "rabdgfggh"
+  
+
+
+
+</script>
+</body>
+</html>

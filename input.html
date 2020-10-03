@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>SAME NAME COLUMNS</title>
+</head>
+<body>
+
+    <h2 style="color: darkorchid;">click here to see how many similar names are there in database</h2><br>
+
+    <input style=" background-color:rgb(0, 47, 255);color: white;"  type="text"  id="name" placeholder="enter a name">
+    <button style=" background-color:rgb(247, 0, 255);color: white;" onclick="onClickHandler()">click here</button>
+
+     <ol style="color:rgb(0, 47, 255);" id="ol"></ol>
+
+    <script>
+    function onClickHandler(){
+        
+        console.log("im coming onclick");
+        var name = document.getElementById('name').value;
+        var cname ={
+               name:name
+           };
+        console.log(cname);
+
+		fetch('/get-customer', {
+            method: 'POST', // or 'PUT'
+            headers: {  
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(cname)
+        })
+        .then(res => {
+            console.log("im res", res)
+            console.log("im res.status="  , +res.status)
+              return res.json()
+        })
+        .then(data =>{
+          
+            var details = "";
+            data.forEach(element => {
+                details += `<ol>
+
+                            <li>ID:  ${element.id} </li>  
+                            <li>NAME:  ${element.name} </li> 
+                            <li>ADDRESS:  ${element.address} </li> 
+                            <li>EMAIL:  ${element.Email} </li>
+                            <li>PASSWORD:  ${element.password} </li><br><br> 
+                            </ol>`           
+            });
+        
+        document.getElementById('ol').innerHTML = details;
+        
+        }) 
+        .catch(err => console.log(err))     
+    }
+
+</script>
+</body>
+</html>

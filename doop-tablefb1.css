@@ -1,0 +1,278 @@
+body{
+    background-color:#ffffcc;
+    margin: 0%;
+    padding: 0%;
+}
+.hi{
+    width: 60%; 
+    margin: auto;   
+}
+#spin{
+    width: 60%;
+    margin: auto;
+    height: 100%;
+    color:#5c145c;
+    position: fixed;
+    border-color: yellow;
+    font-size: 20px;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    transition-delay: 1s;   
+}
+table{
+    width: 100%;
+    /* margin: auto; */
+    background-color: #5c145c; 
+   
+}
+
+table, th, td {
+
+   border: 1px solid black;
+   border-collapse: collapse;
+   border-color: rgba(251, 255, 0, 0.966);
+   padding: 10px; 
+}
+td{
+    text-align: center;
+    color:  #ffff4d;
+}
+th{
+    color:  white;
+    font-size: x-large;
+}
+#tableid button{
+    background-color: #5c145c;
+    border: none;
+}
+.buttons{
+    position: absolute;
+    top: 700px;
+    left: 636px;
+    width: 310px;
+    /* border: 4px solid rgb(101, 7, 252); */
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.buttons button{
+    background-color: #5c145c;
+    color: white;
+    border: none;
+    width: 60px;
+    padding: 5px;
+   
+}
+
+
+/* div{
+    width: 100%;
+    background-color:#ffffcc;
+     border: 1px solid red;  
+    margin-top: 0%;
+    height: 50px;
+} */
+
+.head{
+    margin: 0 0 3px 0;
+    width: 100%;
+    height: 50px;
+    /* border: 2px solid rgb(0, 255, 64); */
+    background-color: #5c145c;
+    display: flex;
+    justify-content: center;
+   
+}
+.head .inhead{
+   margin: 0;
+    width: 60%;
+    /* border: 2px solid blue; */
+    background-color: #5c145c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inhead #username{
+    /* border: 1px solid red; */
+    flex-grow: 2;
+    text-align: end;
+    padding-right: 25px;
+    
+}
+.mbt{  
+  border: none;
+  height: 25px;
+  background-color:white;
+  color: rgb(41, 13, 199);
+  /* margin-right: 8px;      */
+} 
+.mbt a{
+    text-decoration: none;
+}
+.count{
+   width: 60%;
+   margin: auto;
+   color:  #5c145c;
+   border: none;
+   display: flex;
+   justify-content: space-around;
+  
+}
+.count .tt{
+    /* border: 1px solid greenyellow;
+    margin-bottom: 40px; */
+    flex-grow: 2;
+}
+.count .tc{
+    /* border: 1px solid red; */
+    margin-right: 8px;
+}
+
+/*-----------...........--- model ....................*/
+        .main{
+            display: none;
+            margin: 0;
+            position: fixed;
+            left: 0;
+            top: 0%;
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(97 90 97 / 90%);
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .box{
+            /* position: absolute; */
+            z-index: 999;
+            border: 2px solid  #5c145c;
+            width: 700px;
+            height: 287px;
+            flex-direction: column;
+            align-items: stretch;
+            /* background-color: indigo !important; */
+           
+        }
+       .box .hh{
+            /* border: 1px solid red; */
+            background-color: #5c145c; 
+            height:40px;
+            border-radius: 2px solid  red;
+        }
+        .hh .inhh{
+            height:40px;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 20px; 
+            color: white; 
+        }
+        .close:hover,
+        .close:focus {
+            color: rgb(238, 17, 17);
+            text-decoration: none;
+            cursor: pointer;
+        }  
+        .bodi{
+            /* border: 1px solid green; */
+            height:190px;
+            background-color: white;
+        }
+        .inbodi{
+            height:190px;
+            /* border: 1px solid red; */
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;  
+        }
+        .inbodi>span{
+            color: #5c145c;
+            font-size: 20px;
+        }
+        .inbodi>input{
+            border: 1px solid rgb(243, 9, 146);
+            width: 250px;
+            height: 30px;
+            margin: 0 0 20px 0;      
+           
+        }
+        .foot{
+            background-color: white; 
+            border-top: 1px solid  #5c145c;
+            height:55px;
+        }
+        .infoot{
+            /* height:50px; */
+            margin: 10px;
+            border: 1px solid white;
+            display: flex;
+            justify-content:flex-end;
+            align-items: center;
+             
+        }
+        .infoot>button{
+            height: 30px;
+            width: 90px;
+            margin: 0 30px;
+            color: white;
+            border: none;
+            text-align: center;
+            box-shadow: none;
+
+        }
+        .infoot #cl{
+            background-color:  #fa060680;
+        }
+        .infoot #up{
+            background-color:  rgb(55 182 61 / 96%);
+            position: relative;
+        }
+        .iup{
+            position: absolute;
+            height: 30px;
+            width: 90px;
+            top: 0;
+            left: 0;
+            color: white;
+            border: none;
+            text-align: center;
+        } 
+        .animal{
+            height: 30px;
+            width: 90px;
+            top: 0;
+            left: 0;
+            text-align: center;
+            /* background-color: rgb(55 182 61 / 96%); */
+            position: absolute;
+            /* z-index: 99; */
+            justify-content: center;
+            align-items: center;
+        } 
+        .animal #cat{
+            text-align: center;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+           
+        } 
+        .fish{
+            height: 30px;
+            width: 90px;
+            top: 6px;
+            left: 0;
+            text-align: center;
+            position: absolute;
+            
+        }
+
+        
+     
+
+    
+        
