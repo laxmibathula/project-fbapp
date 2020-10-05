@@ -70,14 +70,10 @@
   
   <script  type="text/javascript">
      
-   var a = Cookies.get('user');
-   var n = JSON.parse(Cookies.get('user')).name;
-   console.log(a);
-   console.log(n);
-
-   document.getElementById('username').innerText = n;
-
-   //--------------------------get customer table from server and data displayed in table
+   var user = Cookies.get('user');
+   if (user) {
+    document.getElementById('username').innerText = JSON.parse(user).name;
+   }
       
     var skip = 0; var limit = 10;
     limitRows(skip,limit);
