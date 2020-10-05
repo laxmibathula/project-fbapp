@@ -97,7 +97,7 @@ function limitRows(skip,limit){
         .then(list => {
             // spinneer icon  hide on success
             var i = document.getElementById('spin');
-            i.style.visibility = "hidden";
+            i.style.display = "none";
 
 
              // )Create a variable to store HTML 
@@ -123,7 +123,7 @@ function limitRows(skip,limit){
 
           // display table when data is fetched ( spinner icon "invissible")
            var ctable = document.getElementById('tableid');
-           ctable.style.visibility = "visible";
+           ctable.style.display = "visible";
     
         });
         document.getElementById("pre").addEventListener("click", function(){    
