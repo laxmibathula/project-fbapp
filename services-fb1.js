@@ -1,9 +1,4 @@
-
-
-const { count } = require('console');
 var mysql = require('mysql2');
-const { resolve } = require('path');
-const { getMaxListeners } = require('process');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -11,7 +6,7 @@ var con = mysql.createConnection({
     database: "mydb"
   });
   //console.log("coming here");
-//.................................................................................
+//...............................................................................
 
 // full customer table 
 const f = function(flimit,fskip){

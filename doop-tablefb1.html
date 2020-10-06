@@ -26,7 +26,7 @@
                       <!-- table -->
     <div class="hi">
           <div id="spin"><i style="padding: 10px;" class="fas fa-cog fa-spin"></i>Loading..... </div>
-        <div style="height: 100px;"><table id="tableid"></table></div>
+        <div class="dtable"><table id="tableid"></table></div>
     </div>
 
      <!----------------------- buttons code ------------------->
@@ -70,10 +70,14 @@
   
   <script  type="text/javascript">
      
-   var facebbok = Cookies.get('user');
-   if (facebbok) {
-    document.getElementById('username').innerText = JSON.parse(facebbok).name;
-   }
+   var a = Cookies.get('user');
+   var n = JSON.parse(Cookies.get('user')).name;
+   console.log(a);
+   console.log(n);
+
+   document.getElementById('username').innerText = n;
+
+   //--------------------------get customer table from server and data displayed in table--------------------------------------
       
     var skip = 0; var limit = 10;
     limitRows(skip,limit);
@@ -133,8 +137,7 @@ function limitRows(skip,limit){
   
 }  
 
-// <td>`+user.id+`</td> 
-    // ocalhost:8086/custmr?offset=0&limit=20
+
 //-------------------------------------------------  Delete Row  --------------------------------------------------------------------------------------- 
 
      function fndelete(id,event){
