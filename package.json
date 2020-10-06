@@ -4,7 +4,7 @@
   "description": "a clone of fb project",
   "main": "cooki.js",
   "scripts": {
-    "start": "node run doop-fb1.js",
+    "start": "node doop-fb1.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/laxmibathula/project-fb#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "loader": "^2.1.1",
     "mysql2": "^2.2.5"

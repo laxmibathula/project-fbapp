@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const things = require("./routes.js")
@@ -39,12 +40,12 @@ app.use(function(req, res, next) {
 app.use("/",things);
 
 
-app.listen(8086,function(){
-	console.log(" port running at 8086");
+app.listen(process.env.PORT,function(){
+	console.log(` port running at ${process.env.PORT}`);
 });
 
 // var a=8086;
-// app.listen(function(){
+// app.listen(a,function(){
 // 	console.log(" port running at" +a);
 // });
 
