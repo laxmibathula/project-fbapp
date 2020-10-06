@@ -9,10 +9,10 @@ clone the repository and then run command
 create .env file  ,just like in .env.example
 
 > PORT=8085
-> DB_HOST=your-host
-> DB_USERNAME=username
-> DB_PASSWORD=db-password
-> DB_NAME=databasename
+ DB_HOST=your-host
+ DB_USERNAME=username
+ DB_PASSWORD=db-password
+ DB_NAME=databasename
 
 ###  Run the server
 > npm start
