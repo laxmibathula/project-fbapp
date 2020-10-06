@@ -97,7 +97,7 @@ router.post("/get-customer",function(req,res){
 router.delete("/remove-customer/:abc",function(req,res){ 
         var userid = req.params.abc;
         console.log("this is req.params.id =" +userid);
-        services.deluser(userid).then(function(results){
+        services.deleteuser(userid).then(function(results){
           //console.log(results) 
           return res.status(200).send(results);
         }).catch(function(err){
