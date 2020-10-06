@@ -136,7 +136,7 @@ const names = function(a){
 }
 
 
-const deluser = function(id){
+const deleteuser = function(id){
 
   return  new Promise(function(resolve,reject){
     con.query('delete from customers where id = ?',[id],
@@ -168,4 +168,4 @@ const deluser = function(id){
 //   }
 //}
 
-module.exports= {f,insertvalues,z,names,deluser,checkemail,total,update};
+module.exports= {f,insertvalues,z,names,deleteuser,checkemail,total,update};
