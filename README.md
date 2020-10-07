@@ -9,11 +9,11 @@ npm install
 ## Environmental variables
 create .env file  ,just like in .env.example
  ```
- PORT=8085<br>
-    DB_HOST=your-host<br>
-    DB_USERNAME=username<br>
-    DB_PASSWORD=db-password<br>
-    DB_NAME=databasename
+ PORT=8085
+ DB_HOST=your-host
+ DB_USERNAME=username
+ DB_PASSWORD=db-password
+ DB_NAME=databasename
  ```
 
 ## Run the server
