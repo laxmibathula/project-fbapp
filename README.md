@@ -1,23 +1,28 @@
-# facebook
+# Project-F
 
-### Getting started
-clone the repository and then run command
+## Getting started
+Clone the repository and then run command
 
-``` npm install ```
+``` 
+npm install
+```
 
-### Environmental variables
+## Environmental variables
 create .env file  ,just like in .env.example
-
- ```PORT=8085<br>
+ ```
+ PORT=8085<br>
     DB_HOST=your-host<br>
     DB_USERNAME=username<br>
     DB_PASSWORD=db-password<br>
-    DB_NAME=databasename```
+    DB_NAME=databasename
+ ```
 
-###  Run the server
-``` npm start```
+## Run the server
+``` 
+npm start
+```
 
-#### now open the URL  http://localhost:8085
+### Now open the URL  http://localhost:8085
 
 
 
