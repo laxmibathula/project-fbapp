@@ -1,8 +1,8 @@
 # project-fb
-A basic facebook clone with form submit,login and user details.
+A basic facebook clone with form submit, login and user details.
 
 ## Getting started
-Clone the repository and then run following command to install the packages
+Clone the repository and then run following command to install the packages.
 ``` 
 npm install
 ```
@@ -22,7 +22,7 @@ Create .env file with the variables shown in **.env.example**
 npm start
 ```
 
-### Now open the URL  http://localhost:8085
+### Now open the URL  http://localhost:8085/home
 
 
 
