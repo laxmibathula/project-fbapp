@@ -16,6 +16,23 @@ Create .env file with the variables shown in **.env.example**
  DB_PASSWORD=db-password
  DB_NAME=databasename
  ```
+ 
+ ### Create a table
+```
+CREATE  TABLE customers (
+
+id int  NOT  NULL AUTO_INCREMENT PRIMARY  KEY,
+
+name  VARCHAR(255),
+
+address  VARCHAR(255),
+
+Email VARCHAR(225),
+
+password  VARCHAR(225)
+
+);
+```
 
 ## Run the server
 ``` 
