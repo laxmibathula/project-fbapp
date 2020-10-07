@@ -16,6 +16,9 @@ Create .env file with the variables shown in **.env.example**
  DB_PASSWORD=db-password
  DB_NAME=databasename
  ```
+ 
+ ## Create necessary tables
+Create tables as shown in sql-table.sql file before running the project.
 
 ## Run the server
 ``` 
