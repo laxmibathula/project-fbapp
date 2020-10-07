@@ -1,8 +1,7 @@
-# Project-F
+# Project-Fb
 
 ## Getting started
 Clone the repository and then run command
-
 ``` 
 npm install
 ```
