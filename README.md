@@ -8,7 +8,7 @@ npm install
 ```
 
 ## Environmental variables
-Create .env file just like in .env.example
+Create .env file just like in **.env.example**
  ```
  PORT=8085
  DB_HOST=your-host
