@@ -1,14 +1,10 @@
 var mysql = require('mysql2');
 var con = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
-  });
-
-  console.log(process.env);
-  //console.log("coming here");
-//...............................................................................
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
+});
 
 // full customer table 
 const f = function(flimit,fskip){

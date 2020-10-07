@@ -1,23 +1,15 @@
 const express = require('express');
 const router = express.Router();
-var services = require("./services-fb1.js");
+var services = require("./services.js");
 var STATIC_DIR = __dirname;
 
-
 router.get('/home', function(req, res) {
-  res.sendFile(STATIC_DIR + '/doop-fb1.html');
+  res.sendFile(STATIC_DIR + '/login-signup.html');
 });
-
 
 router.get('/table', function(req, res) {
-  res.sendFile(STATIC_DIR + '/doop-tablefb1.html');
+  res.sendFile(STATIC_DIR + '/table.html');
 });
-
-router.get('/details',function(req,res){
-res.sendFile(STATIC_DIR + '/input.html');
-})
-
-// services.hundred();
 
 // insert name, email , password in customers database table coming from client(html)
 router.post("/fbpg",function(req,res){
