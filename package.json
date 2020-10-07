@@ -4,7 +4,7 @@
   "description": "a clone of fb project",
   "main": "cooki.js",
   "scripts": {
-    "start": "node doop-fb1.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
