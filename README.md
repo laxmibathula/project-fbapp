@@ -18,21 +18,7 @@ Create .env file with the variables shown in **.env.example**
  ```
  
  ### Create a table
-```
-CREATE  TABLE customers (
-
-id int  NOT  NULL AUTO_INCREMENT PRIMARY  KEY,
-
-name  VARCHAR(255),
-
-address  VARCHAR(255),
-
-Email VARCHAR(225),
-
-password  VARCHAR(225)
-
-);
-```
+Create a table as shown in sql-table.sql file.
 
 ## Run the server
 ``` 
