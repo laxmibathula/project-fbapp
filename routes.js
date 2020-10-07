@@ -4,11 +4,11 @@ var services = require("./services.js");
 var STATIC_DIR = __dirname;
 
 router.get('/home', function(req, res) {
-  res.sendFile(STATIC_DIR + '/login-signup.html');
+  res.sendFile(STATIC_DIR + '/frontend/login-signup.html');
 });
 
 router.get('/table', function(req, res) {
-  res.sendFile(STATIC_DIR + '/table.html');
+  res.sendFile(STATIC_DIR + '/frontend/table.html');
 });
 
 // insert name, email , password in customers database table coming from client(html)
