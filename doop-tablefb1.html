@@ -85,9 +85,10 @@
 function limitRows(skip,limit){
 
     //    console.log(skip);
-    //    console.log(limit);
+    //    console.log(limit);     fetch(`http://localhost:8086/custmr?skip=${skip}&limit=${limit}`,{
+
     
-    fetch(`http://localhost:8086/custmr?skip=${skip}&limit=${limit}`,{
+    fetch(`/custmr?skip=${skip}&limit=${limit}`,{
             method: 'GET', // or 'PUT'
             headers: {
               'Content-Type': 'application/json',
@@ -108,7 +109,7 @@ function limitRows(skip,limit){
              const jsonstring = (JSON.stringify(user)).trim();
 
              li += `<tr> 
-            <td>`+user.Id+`</td> 
+            <td>`+user.id+`</td> 
             <td data-value="nname">`+user.name+`</td> 
             <td data-value="aaddress">`+user.address+`</td> 
             <td>`+user.Email+`</td> 
@@ -144,7 +145,7 @@ function limitRows(skip,limit){
             console.log(id);
             console.log("it z  event ", event);
 
-            fetch('http://localhost:8086/remove-customer/'+id,{
+            fetch('/remove-customer/'+id,{
                 method:"delete"
             })
             .then(res =>{
@@ -172,7 +173,7 @@ function limitRows(skip,limit){
     }
 // --------------------------------------------------------  TOTAL COUNT   ------------------------------------------------------------------------------------    
   
-fetch('http://localhost:8086/total-count', {
+fetch('/total-count', {
             method: 'GET', // or 'PUT'   
         })
         .then(response => {

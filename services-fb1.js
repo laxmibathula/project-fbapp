@@ -6,17 +6,17 @@ var con = mysql.createConnection({
     database: process.env.DB_NAME
   });
 
-  console.log(process.env);
+  // console.log(process.env);
   //console.log("coming here");
 //...............................................................................
 
 // full customer table 
 const f = function(flimit,fskip){
                return new Promise(function(resolve,reject){
-                      console.log(flimit);
-                      console.log(fskip);
+                      // console.log(flimit);
+                      // console.log(fskip);
                       var query = `select * from customers limit ${flimit} offset ${fskip}`;
-                      console.log(query);
+                      // console.log(query);
                       con.query(query,function(err,results){
                             if(err){
                                reject(err);

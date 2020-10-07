@@ -39,6 +39,8 @@ app.use(function(req, res, next) {
 
 app.use("/",things);
 
+var add = 2+2;
+console.log(add);
 
 app.listen(process.env.PORT,function(){
 	console.log(` port running at ${process.env.PORT}`);
