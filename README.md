@@ -22,7 +22,7 @@ Create .env file with the variables shown in **.env.example**
 npm start
 ```
 
-### Now open the URL  http://localhost:8085
+### Now open the URL  http://localhost:8085/home
 
 
 
