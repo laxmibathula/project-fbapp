@@ -2,7 +2,7 @@ if(Cookies.get('user')){
 	window.location.href = "/table";
 }
   
-function fn(){
+function signUp(){
    var ffname = document.getElementById('fname').value;
    var flname = document.getElementById('lname').value;
    var tname = /^[A-Za-z .]{3,20}$/
