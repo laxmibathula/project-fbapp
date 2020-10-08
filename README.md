@@ -1,5 +1,6 @@
 # project-fb
 A basic facebook clone with form submit, login and user details.
+Hosted Url: http://project-fbapp.herokuapp.com/home
 
 ## Getting started
 Clone the repository and then run following command to install the packages.
