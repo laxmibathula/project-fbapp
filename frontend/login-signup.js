@@ -75,7 +75,7 @@ function fn(){
     });        
 }
 
-function lg(){
+function logIn(){
 	var email = document.getElementById('lgemail').value;
 	var pass = document.getElementById('lgpwd').value;
 
