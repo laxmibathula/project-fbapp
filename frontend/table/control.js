@@ -2,7 +2,7 @@ var a = Cookies.get('user');
 var n = JSON.parse(Cookies.get('user')).name;
 console.log(a);
 console.log(n);
-
+console.log("raji");
 document.getElementById('username').innerText = n;
 
 var skip = 0; var limit = 10;
