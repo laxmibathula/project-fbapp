@@ -8,6 +8,8 @@ document.getElementById('username').innerText = n;
 var skip = 0; var limit = 10;
 limitRows(skip,limit);
 
+console.log("afdsgdgrmj");
+
 function limitRows(skip,limit){    
     fetch(`/table-data?skip=${skip}&limit=${limit}`,{
             method: 'GET', // or 'PUT'
