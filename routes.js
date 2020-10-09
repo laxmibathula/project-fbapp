@@ -12,7 +12,7 @@ router.get('/table', function(req, res) {
 });
 
 // insert name, email , password in customers database table coming from client(html)
-router.post("/fbpg",function(req,res){
+router.post("/signup",function(req,res){
     var fbv = req.body;
     console.log(fbv.ffname);
     console.log(fbv.flname);
@@ -41,7 +41,7 @@ router.post("/fbpg",function(req,res){
 
 // checking email and password coming from client .if user is  there sending status back to client
 
-router.post("/lgbt",function(req,res){
+router.post("/login",function(req,res){
     var fbv = req.body;
   
     services.z(fbv.email,fbv.pass,function(raji,data){
@@ -55,7 +55,7 @@ router.post("/lgbt",function(req,res){
 
   // sending customer table all data to html
 
-  router.get("/custmr",function(req,res){ 
+  router.get("/table-data",function(req,res){ 
           var fskip = 0; 
           var flimit = 1000;
           if(req.query.skip){

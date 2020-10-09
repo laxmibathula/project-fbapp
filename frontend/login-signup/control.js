@@ -59,7 +59,7 @@ function signUp(){
     };
 
 		   
-   fetch('/fbpg', {
+   fetch('/signup', {
     method: 'POST', // or 'PUT'
     headers: {
       'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ function logIn(){
 
      console.log(abc)
 	
-	fetch('/lgbt', {
+	fetch('/login', {
             method: 'POST', // or 'PUT'
             headers: {
               'Content-Type': 'application/json',
@@ -118,8 +118,10 @@ function logIn(){
 			   console.log(e);
 			   console.log(n);
 
-				// if(Cookies.get('user')){
-				  window.location.href = "/table";
+			   window.location.href = "/table";
+
+				//  if(Cookies.get('user')){   window.location.href = "/table";
+				    
 				// }
 	}).catch(function(error){
 		alert("somthing went wrong");

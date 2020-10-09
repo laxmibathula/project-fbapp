@@ -9,7 +9,7 @@ var skip = 0; var limit = 10;
 limitRows(skip,limit);
 
 function limitRows(skip,limit){    
-    fetch(`/custmr?skip=${skip}&limit=${limit}`,{
+    fetch(`/table-data?skip=${skip}&limit=${limit}`,{
             method: 'GET', // or 'PUT'
             headers: {
               'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ function limitRows(skip,limit){
             <td data-value="aaddress">`+user.address+`</td> 
             <td>`+user.Email+`</td> 
             <td>`+user.password+`</td>
-            <td><button onclick="fndelete(`+user.id+`,event)"><i style="color:#ff0000 ;" class="fas fa-user-slash"></i></button></td>
+            <td><button onclick="deleteUser(`+user.id+`,event)"><i style="color:#ff0000 ;" class="fas fa-user-slash"></i></button></td>
             <td><button data-user='${jsonstring}' class="update-btn" onclick="update(event)"><i style="color:#ffff66;font-size: 17px;" class="fas fa-pen-square"></i></button</td> 
             </tr>`; 
             }); 
@@ -60,7 +60,7 @@ function limitRows(skip,limit){
 }
 
 
-function fndelete(id,event){
+function deleteUser(id,event){
   console.log(id);
   console.log("it z  event ", event);
 
