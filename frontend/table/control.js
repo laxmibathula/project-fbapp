@@ -6,11 +6,9 @@ console.log("raji");
 document.getElementById('username').innerText = n;
 
 var skip = 0; var limit = 10;
-limitRows(skip,limit);
+customersData(skip,limit);
 
-console.log("afdsgdgrmj");
-
-function limitRows(skip,limit){    
+function customersData(skip,limit){    
     fetch(`/table-data?skip=${skip}&limit=${limit}`,{
             method: 'GET', // or 'PUT'
             headers: {
@@ -52,11 +50,11 @@ function limitRows(skip,limit){
         });
         document.getElementById("pre").addEventListener("click", function(){    
                    skip = skip - limit;
-                   limitRows(skip,limit);
+                   customersData(skip,limit);
         }); 
         document.getElementById("next").addEventListener("click", function(){    
                    skip = skip + limit;
-                   limitRows(skip,limit);
+                   customersData(skip,limit);
         });
   
 }
