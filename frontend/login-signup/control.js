@@ -1,5 +1,5 @@
 if(Cookies.get('user')){
-	window.location.href = "/table";
+	window.location.href = "/";
 }
   
 function signUp(){
@@ -118,7 +118,7 @@ function logIn(){
 			   console.log(e);
 			   console.log(n);
 
-			   window.location.href = "/table";
+			   window.location.href = "/";
 
 				//  if(Cookies.get('user')){   window.location.href = "/table";
 				    

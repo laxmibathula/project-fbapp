@@ -7,7 +7,7 @@ router.get('/home', function(req, res) {
   res.sendFile(STATIC_DIR + '/frontend/login-signup/index.html');
 });
 
-router.get('/table', function(req, res) {
+router.get('/', function(req, res) {
   res.sendFile(STATIC_DIR + '/frontend/table/index.html');
 });
 
