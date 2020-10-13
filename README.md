@@ -1,4 +1,4 @@
-# project-fb
+# project-fbapp
 A basic facebook clone with form submit, login and user details. <br/>
 Hosted Url: http://project-fbapp.herokuapp.com/home
 
