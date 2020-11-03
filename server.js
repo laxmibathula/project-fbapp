@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+var cors = require('cors');
 const bodyParser = require('body-parser');
 const routes = require("./routes.js")
 const app = express();
@@ -7,6 +8,7 @@ const app = express();
 const STATIC_DIR = __dirname;
 app.use(express.static(STATIC_DIR));
 
+app.use(cors());
 // support parsing of application/json type post data
 app.use(bodyParser.json());
 
